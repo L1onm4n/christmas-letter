@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #0f4c27 0%, #1a6d3b 50%, #2d8659 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Snowflakes Animation */
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: #fff;
+    font-size: 1.5em;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+.snowflake:nth-child(1) {
+    left: 10%;
+    animation-duration: 8s;
+    animation-delay: 0s;
+}
+
+.snowflake:nth-child(2) {
+    left: 20%;
+    animation-duration: 10s;
+    animation-delay: 2s;
+}
+
+.snowflake:nth-child(3) {
+    left: 40%;
+    animation-duration: 12s;
+    animation-delay: 4s;
+}
+
+.snowflake:nth-child(4) {
+    left: 70%;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+.snowflake:nth-child(5) {
+    left: 85%;
+    animation-duration: 11s;
+    animation-delay: 3s;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) translateX(100px);
+        opacity: 0;
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 20px;
+}
+
+.title {
+    font-size: 3em;
+    color: #fff;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.envelope {
+    width: 400px;
+    height: 280px;
+    margin: 0 auto 40px;
+    cursor: pointer;
+    perspective: 1000px;
+    position: relative;
+}
+
+.envelope-front {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
+    border: 3px solid #8b6914;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.6s ease;
+    position: relative;
+    transform-origin: center;
+}
+
+.envelope.open .envelope-front {
+    opacity: 0;
+    transform: rotateY(180deg) scale(0.9);
+    pointer-events: none;
+}
+
+.envelope-seal {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #c41e3a 0%, #a01729 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.envelope-front:hover .envelope-seal {
+    transform: scale(1.1);
+}
+
+.seal-text {
+    font-size: 2.5em;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.envelope-text {
+    color: #8b6914;
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.letter {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #fffbf0 0%, #fff9eb 100%);
+    border: 2px solid #c41e3a;
+    border-radius: 8px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: rotateY(-180deg) scale(0.9);
+    transition: all 0.6s ease;
+    overflow-y: auto;
+}
+
+.envelope.open .letter {
+    opacity: 1;
+    transform: rotateY(0deg) scale(1);
+    pointer-events: auto;
+}
+
+.letter-content {
+    text-align: left;
+    width: 100%;
+}
+
+.letter-greeting {
+    font-size: 1.5em;
+    color: #c41e3a;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.letter-body {
+    font-size: 1.1em;
+    color: #2c2c2c;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.letter-closing {
+    font-size: 1em;
+    color: #2c2c2c;
+    margin-top: 40px;
+    text-align: right;
+    font-style: italic;
+}
+
+.signature {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #c41e3a;
+    display: block;
+    margin-top: 10px;
+}
+
+.instruction {
+    color: #fff;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-top: 30px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .envelope {
+        width: 300px;
+        height: 200px;
+    }
+
+    .title {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .letter-greeting {
+        font-size: 1.2em;
+    }
+
+    .letter-body {
+        font-size: 0.95em;
+    }
+
+    .letter {
+        padding: 25px;
+    }
+}
