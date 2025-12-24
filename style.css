@@ -91,28 +91,28 @@ body {
     animation: twinkle 3s ease-in-out infinite;
 }
 
-/* Stars in corners of letter */
+/* Stars on background */
 .star:nth-child(1) {
-    top: calc(50% - 140px);
-    left: calc(50% - 200px);
+    left: 5%;
+    top: 10%;
     animation-delay: 0s;
 }
 
 .star:nth-child(2) {
-    top: calc(50% - 140px);
-    right: calc(50% - 200px);
+    left: 15%;
+    top: 20%;
     animation-delay: 0.5s;
 }
 
 .star:nth-child(3) {
-    bottom: calc(50% - 140px);
-    left: calc(50% - 200px);
+    left: 30%;
+    top: 15%;
     animation-delay: 1s;
 }
 
 .star:nth-child(4) {
-    bottom: calc(50% - 140px);
-    right: calc(50% - 200px);
+    left: 60%;
+    top: 25%;
     animation-delay: 1.5s;
 }
 
@@ -162,35 +162,39 @@ body {
     animation: pulse-heart 2s ease-in-out infinite;
 }
 
-/* Hearts in corners of letter */
+/* Hearts floating upward */
+.heart {
+    animation: float-up 6s ease-in infinite;
+}
+
 .heart:nth-child(1) {
-    top: calc(50% - 130px);
-    left: calc(50% - 190px);
+    left: 10%;
+    bottom: -20px;
     animation-delay: 0s;
 }
 
 .heart:nth-child(2) {
-    top: calc(50% - 130px);
-    right: calc(50% - 190px);
-    animation-delay: 0.4s;
-}
-
-.heart:nth-child(3) {
-    bottom: calc(50% - 130px);
-    left: calc(50% - 190px);
-    animation-delay: 0.8s;
-}
-
-.heart:nth-child(4) {
-    bottom: calc(50% - 130px);
-    right: calc(50% - 190px);
+    left: 25%;
+    bottom: -20px;
     animation-delay: 1.2s;
 }
 
+.heart:nth-child(3) {
+    left: 50%;
+    bottom: -20px;
+    animation-delay: 2.4s;
+}
+
+.heart:nth-child(4) {
+    left: 70%;
+    bottom: -20px;
+    animation-delay: 3.6s;
+}
+
 .heart:nth-child(5) {
-    left: 20%;
-    top: 40%;
-    animation-delay: 1.6s;
+    left: 85%;
+    bottom: -20px;
+    animation-delay: 4.8s;
 }
 
 @keyframes float-up {
